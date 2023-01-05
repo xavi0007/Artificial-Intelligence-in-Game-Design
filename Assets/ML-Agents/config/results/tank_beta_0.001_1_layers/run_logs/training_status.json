@@ -1,0 +1,38 @@
+{
+    "AgentTank": {
+        "checkpoints": [
+            {
+                "steps": 2499901,
+                "file_path": "results/tank_beta_0.001_1_layers/AgentTank/AgentTank-2499901.onnx",
+                "reward": null,
+                "creation_time": 1665865901.574948,
+                "auxillary_file_paths": [
+                    "results/tank_beta_0.001_1_layers/AgentTank/AgentTank-2499901.pt"
+                ]
+            },
+            {
+                "steps": 2500637,
+                "file_path": "results/tank_beta_0.001_1_layers/AgentTank/AgentTank-2500637.onnx",
+                "reward": 3.7201994881033897,
+                "creation_time": 1665865901.6556318,
+                "auxillary_file_paths": [
+                    "results/tank_beta_0.001_1_layers/AgentTank/AgentTank-2500637.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 2500637,
+            "file_path": "results/tank_beta_0.001_1_layers/AgentTank.onnx",
+            "reward": 3.7201994881033897,
+            "creation_time": 1665865901.6556318,
+            "auxillary_file_paths": [
+                "results/tank_beta_0.001_1_layers/AgentTank/AgentTank-2500637.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.28.0",
+        "torch_version": "1.8.0.post3"
+    }
+}

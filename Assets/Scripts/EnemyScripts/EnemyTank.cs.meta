@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 5b2f3006a3ac31a47a472120b37c9ca9
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - _movementSFX: {instanceID: 0}
+  - _tankSFX: {instanceID: 0}
+  - _clipIdle: {instanceID: 0}
+  - _clipMoving: {instanceID: 0}
+  - _clipShotFired: {instanceID: 0}
+  - _clipNoAmmo: {instanceID: 0}
+  - _clipTankExplode: {instanceID: 0}
+  - ExplosionEffect: {fileID: 151086, guid: ee49a9a8678ecf8468eb488e1ac8d42b, type: 3}
+  - powerUp: {instanceID: 0}
+  - healthBar: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

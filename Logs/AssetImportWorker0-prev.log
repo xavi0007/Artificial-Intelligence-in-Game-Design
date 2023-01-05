@@ -1,0 +1,346 @@
+Unity Editor version:    2021.3.8f1 (b30333d56e81)
+Branch:                  2021.3/staging
+Build type:              Release
+Batch mode:              YES
+macOS version:           Version 13.0 (Build 22A380)
+Darwin version:          22.1.0
+Architecture:            arm64
+Running under Rosetta:   NO
+Available memory:        16384 MB
+Using pre-set license
+Pro License: YES
+
+COMMAND LINE ARGUMENTS:
+/Applications/Unity/Hub/Editor/2021.3.8f1/Unity.app/Contents/MacOS/Unity
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+/Users/xavier/Programming/ReLe_assignment
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+60163
+Successfully changed project path to: /Users/xavier/Programming/ReLe_assignment
+/Users/xavier/Programming/ReLe_assignment
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Refreshing native plugins compatible for Editor in 86.02 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.3.8f1 (b30333d56e81)
+[Subsystems] Discovering subsystems at path /Applications/Unity/Hub/Editor/2021.3.8f1/Unity.app/Contents/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path /Users/xavier/Programming/ReLe_assignment/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+ preferred device: Apple M1 Pro (high power)
+Metal devices available: 1
+0: Apple M1 Pro (high power)
+Using device Apple M1 Pro (high power)
+Initializing Metal device caps: Apple M1 Pro
+Initialize mono
+Mono path[0] = '/Applications/Unity/Hub/Editor/2021.3.8f1/Unity.app/Contents/Managed'
+Mono path[1] = '/Applications/Unity/Hub/Editor/2021.3.8f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/unityjit-macos'
+Mono config path = '/Applications/Unity/Hub/Editor/2021.3.8f1/Unity.app/Contents/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56108
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: /Applications/Unity/Hub/Editor/2021.3.8f1/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: /Applications/Unity/Hub/Editor/2021.3.8f1/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
+Register platform support module: /Applications/Unity/Hub/Editor/2021.3.8f1/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Register platform support module: /Applications/Unity/Hub/Editor/2021.3.8f1/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll
+Registered in 0.003246 seconds.
+[usbmuxd] Start listen thread
+[usbmuxd] Listen thread started
+[usbmuxd] Send listen message
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 80.53 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.469 seconds
+Domain Reload Profiling:
+	ReloadAssembly (469ms)
+		BeginReloadAssembly (61ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (0ms)
+		EndReloadAssembly (344ms)
+			LoadAssemblies (63ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (63ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (19ms)
+			SetupLoadedEditorAssemblies (235ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (70ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (81ms)
+				BeforeProcessingInitializeOnLoad (1ms)
+				ProcessInitializeOnLoadAttributes (60ms)
+				ProcessInitializeOnLoadMethodAttributes (23ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.008048 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image /Users/xavier/Programming/ReLe_assignment/Library/PackageCache/com.unity.visualscripting@1.7.8/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image /Users/xavier/Programming/ReLe_assignment/Library/PackageCache/com.unity.visualscripting@1.7.8/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 83.07 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.745 seconds
+Domain Reload Profiling:
+	ReloadAssembly (746ms)
+		BeginReloadAssembly (46ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (3ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (9ms)
+		EndReloadAssembly (632ms)
+			LoadAssemblies (53ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (175ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (38ms)
+			SetupLoadedEditorAssemblies (328ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (15ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (83ms)
+				BeforeProcessingInitializeOnLoad (67ms)
+				ProcessInitializeOnLoadAttributes (146ms)
+				ProcessInitializeOnLoadMethodAttributes (15ms)
+				AfterProcessingInitializeOnLoad (1ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (3ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launching external process: /Applications/Unity/Hub/Editor/2021.3.8f1/Unity.app/Contents/Tools/UnityShaderCompiler
+Launched and connected shader compiler UnityShaderCompiler after 0.05 seconds
+Refreshing native plugins compatible for Editor in 0.53 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4154 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 72 unused Assets / (21.3 MB). Loaded Objects now: 4577.
+Memory consumption went from 178.4 MB to 157.1 MB.
+Total: 5.355542 ms (FindLiveObjects: 0.113958 ms CreateObjectMapping: 0.050292 ms MarkObjects: 2.144250 ms  DeleteObjects: 3.046500 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 30170.986732 seconds.
+  path: Assets/Prefabs/Enemy Tank 2.prefab
+  artifactKey: Guid(dc8f4e160f6f44e1a8461f91eafed93e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemy Tank 2.prefab using Guid(dc8f4e160f6f44e1a8461f91eafed93e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9a7389b60641d136c214f3803869537a') in 1.103999 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/Prefabs/HydraTank Variant.prefab
+  artifactKey: Guid(690731d2ef2f9a1438d3b4d4ab51ac71) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/HydraTank Variant.prefab using Guid(690731d2ef2f9a1438d3b4d4ab51ac71) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '33324aa3c6bf625a2b3e2672fec970b0') in 0.030523 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000045 seconds.
+  path: Assets/Prefabs/FriendlyTank.prefab
+  artifactKey: Guid(f134d1001a38f407c89d4d96c2bc3456) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/FriendlyTank.prefab using Guid(f134d1001a38f407c89d4d96c2bc3456) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c22ba6045d3522a90ed4687c8c13570c') in 0.011404 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1931.077370 seconds.
+  path: Assets/ML-Agents/config/results/tank_256hu/AgentTank.onnx
+  artifactKey: Guid(83467a5c5d46d41e1832e33aeb5557ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ML-Agents/config/results/tank_256hu/AgentTank.onnx using Guid(83467a5c5d46d41e1832e33aeb5557ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f0f478c4bc196e5a6c911ba79d552591') in 0.094562 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000067 seconds.
+  path: Assets/ML-Agents/config/results/tank_beta_0.001_1_layers_32_batch_size/AgentTank/AgentTank-1499907.onnx
+  artifactKey: Guid(13361ab5745da4ddbb23f2f72addac8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ML-Agents/config/results/tank_beta_0.001_1_layers_32_batch_size/AgentTank/AgentTank-1499907.onnx using Guid(13361ab5745da4ddbb23f2f72addac8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e2f9bbe2ff1afd6a166bc69d7c208844') in 0.007330 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/ML-Agents/config/results/tank_beta_0.001_1_layers_32_batch_size_buffer_4096/AgentTank/AgentTank-1000195.onnx
+  artifactKey: Guid(1be367e8dbc9a4ac7850f730fa4df3d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ML-Agents/config/results/tank_beta_0.001_1_layers_32_batch_size_buffer_4096/AgentTank/AgentTank-1000195.onnx using Guid(1be367e8dbc9a4ac7850f730fa4df3d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9f88727a1728ed32addb2f74e2cd5f55') in 0.007536 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000045 seconds.
+  path: Assets/ML-Agents/config/results/tank_beta_0.001_2_layers_buffer_4096_epsil_0.1/AgentTank/AgentTank-1001176.onnx
+  artifactKey: Guid(dcb0ee5b873704c8fbeadf80831584e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ML-Agents/config/results/tank_beta_0.001_2_layers_buffer_4096_epsil_0.1/AgentTank/AgentTank-1001176.onnx using Guid(dcb0ee5b873704c8fbeadf80831584e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a405e03109eafce14c69a2d42b3e2647') in 0.006219 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.989211 seconds.
+  path: Assets/ML-Agents/config/results/tank_beta_0.001_1_layers_32_batch_size/AgentTank/AgentTank-1999947.onnx
+  artifactKey: Guid(93d1e50adcf274b9b80415da96e1c713) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ML-Agents/config/results/tank_beta_0.001_1_layers_32_batch_size/AgentTank/AgentTank-1999947.onnx using Guid(93d1e50adcf274b9b80415da96e1c713) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6225a77337cdaadcd9d8ddaf4286a0df') in 0.008490 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.108981 seconds.
+  path: Assets/ML-Agents/config/results/tank_beta_0.001_1_layers/AgentTank/AgentTank-2499901.onnx
+  artifactKey: Guid(7bbdaaabafb2f4622bc4496198e20ccb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ML-Agents/config/results/tank_beta_0.001_1_layers/AgentTank/AgentTank-2499901.onnx using Guid(7bbdaaabafb2f4622bc4496198e20ccb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '99fce0f98e57d5cc50139251f8eb4a3e') in 0.010013 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000065 seconds.
+  path: Assets/ML-Agents/config/results/tank_beta_0.001/AgentTank/AgentTank-2502004.onnx
+  artifactKey: Guid(6d380c93377b445f786d3764a3e34371) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ML-Agents/config/results/tank_beta_0.001/AgentTank/AgentTank-2502004.onnx using Guid(6d380c93377b445f786d3764a3e34371) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6fef396f06ede67e78dd9410bf39917c') in 0.008685 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/ML-Agents/config/results/tank_beta_0.001_3_layers/AgentTank/AgentTank-2500926.onnx
+  artifactKey: Guid(7d60bc80976c44b388f518641945a2ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ML-Agents/config/results/tank_beta_0.001_3_layers/AgentTank/AgentTank-2500926.onnx using Guid(7d60bc80976c44b388f518641945a2ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '050bd5e41be2ae00a099670f726343a4') in 0.008736 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000055 seconds.
+  path: Assets/ML-Agents/config/results/tank_beta_0.001_1_layers/AgentTank/AgentTank-2500637.onnx
+  artifactKey: Guid(743e56bf8069346e1b33408a5d897693) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ML-Agents/config/results/tank_beta_0.001_1_layers/AgentTank/AgentTank-2500637.onnx using Guid(743e56bf8069346e1b33408a5d897693) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '61dfd3383bf29c4089aeb5abf6c1eaf9') in 0.006607 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000057 seconds.
+  path: Assets/ML-Agents/config/results/tank_256hu/AgentTank/AgentTank-4999988.onnx
+  artifactKey: Guid(f763744ee618f45f998baf22cd79c42c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ML-Agents/config/results/tank_256hu/AgentTank/AgentTank-4999988.onnx using Guid(f763744ee618f45f998baf22cd79c42c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '071a74c90c8a9edfc0c81521fc255201') in 0.006872 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/ML-Agents/config/results/smart_tank_04/AgentTank/AgentTank-5000845.onnx
+  artifactKey: Guid(9e4538ed934624f9993d2d4e44162360) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ML-Agents/config/results/smart_tank_04/AgentTank/AgentTank-5000845.onnx using Guid(9e4538ed934624f9993d2d4e44162360) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3661ffe7a1412ff750c63ffe5970ea52') in 0.006066 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 17.006607 seconds.
+  path: Assets/ML-Agents/config/results/tank_beta_0.001_1_layers/AgentTank.onnx
+  artifactKey: Guid(aca1993a389fe444081ba5d14be8f0cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ML-Agents/config/results/tank_beta_0.001_1_layers/AgentTank.onnx using Guid(aca1993a389fe444081ba5d14be8f0cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4c955751ac288ad053d2ad257aee8a62') in 0.007886 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000065 seconds.
+  path: Assets/ML-Agents/config/results/tank_beta_0.001/AgentTank.onnx
+  artifactKey: Guid(799c29d7443f9418b8d6c89a42290f2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ML-Agents/config/results/tank_beta_0.001/AgentTank.onnx using Guid(799c29d7443f9418b8d6c89a42290f2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1dcf461160e3bdc7cd9bc438de3afa59') in 0.006525 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000049 seconds.
+  path: Assets/ML-Agents/config/results/tank_beta_0.001_1_layers_32_batch_size_buffer_4096/AgentTank.onnx
+  artifactKey: Guid(3d3a574b5244e489299706a6a777e4fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ML-Agents/config/results/tank_beta_0.001_1_layers_32_batch_size_buffer_4096/AgentTank.onnx using Guid(3d3a574b5244e489299706a6a777e4fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '14135f5179addeeaaaeaba3fa2723289') in 0.007085 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 25.358919 seconds.
+  path: Assets/Resources/Audio/MSX_Armor_Piercer.ogg
+  artifactKey: Guid(3be681d1d2a69eb45b1848e1323e580e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Audio/MSX_Armor_Piercer.ogg using Guid(3be681d1d2a69eb45b1848e1323e580e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f28ba8561340346baac924b78ffc9e1e') in 0.551996 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002775 seconds.
+Begin MonoManager ReloadAssembly
+Thread 0x2a7247000 may have been prematurely finalized
+Symbol file LoadedFromMemory doesn't match image /Users/xavier/Programming/ReLe_assignment/Library/PackageCache/com.unity.visualscripting@1.7.8/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image /Users/xavier/Programming/ReLe_assignment/Library/PackageCache/com.unity.visualscripting@1.7.8/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.70 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.573 seconds
+Domain Reload Profiling:
+	ReloadAssembly (573ms)
+		BeginReloadAssembly (73ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (2ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (27ms)
+		EndReloadAssembly (446ms)
+			LoadAssemblies (35ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (170ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (27ms)
+			SetupLoadedEditorAssemblies (187ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (19ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (44ms)
+				ProcessInitializeOnLoadAttributes (108ms)
+				ProcessInitializeOnLoadMethodAttributes (13ms)
+				AfterProcessingInitializeOnLoad (1ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (2ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.46 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4130 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 66 unused Assets / (21.3 MB). Loaded Objects now: 4591.
+Memory consumption went from 419.4 MB to 398.1 MB.
+Total: 4.051875 ms (FindLiveObjects: 0.133584 ms CreateObjectMapping: 0.055791 ms MarkObjects: 2.274042 ms  DeleteObjects: 1.588083 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 

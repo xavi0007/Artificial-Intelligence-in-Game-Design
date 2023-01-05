@@ -1,0 +1,18 @@
+\begin{figure*}
+\centering
+\begin{multicols}{3}
+\includegraphics[width=0.99\columnwidth]{Chapter3/Batch/batch_value.png}\par
+\caption{Green shows the model training with size of $32$ batch size which under performs when compared to Grey and Pink's batch size of $512$. While Pink's buffer size of $2048$ performs better than Grey's $4096$ over the long run. }
+\label{fig:batch_value}
+
+\includegraphics[width=0.99\linewidth]{Chapter3/Batch/batch_cum.png}\par
+\caption{Green's performance is very weak compared to the others. Similarly Pink's buffer size of $2048$ achieves higher rewards than Grey's $4096$ over the long run.}
+\label{fig:batch_cumreward}
+
+\includegraphics[width=0.99\columnwidth]{Chapter3/Batch/batch_policy_loss.png}\par
+\caption{
+Green's policy loss is much higher compared to the other two.
+}
+\label{fig:batch_policy}
+\end{multicols}
+\end{figure*}

@@ -1,0 +1,38 @@
+{
+    "AgentTank": {
+        "checkpoints": [
+            {
+                "steps": 999939,
+                "file_path": "results/tank_beta_0.001_1_layers_32_batch_size_buffer_4096/AgentTank/AgentTank-999939.onnx",
+                "reward": 1.3335999846458435,
+                "creation_time": 1665988832.4654841,
+                "auxillary_file_paths": [
+                    "results/tank_beta_0.001_1_layers_32_batch_size_buffer_4096/AgentTank/AgentTank-999939.pt"
+                ]
+            },
+            {
+                "steps": 1000195,
+                "file_path": "results/tank_beta_0.001_1_layers_32_batch_size_buffer_4096/AgentTank/AgentTank-1000195.onnx",
+                "reward": 1.3335999846458435,
+                "creation_time": 1665988832.5273678,
+                "auxillary_file_paths": [
+                    "results/tank_beta_0.001_1_layers_32_batch_size_buffer_4096/AgentTank/AgentTank-1000195.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 1000195,
+            "file_path": "results/tank_beta_0.001_1_layers_32_batch_size_buffer_4096/AgentTank.onnx",
+            "reward": 1.3335999846458435,
+            "creation_time": 1665988832.5273678,
+            "auxillary_file_paths": [
+                "results/tank_beta_0.001_1_layers_32_batch_size_buffer_4096/AgentTank/AgentTank-1000195.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.28.0",
+        "torch_version": "1.8.0.post3"
+    }
+}

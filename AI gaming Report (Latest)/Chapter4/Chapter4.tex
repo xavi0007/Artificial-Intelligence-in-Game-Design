@@ -1,0 +1,15 @@
+%=== Conclusion ===
+
+\chapter{Conclusion}
+
+
+\section{Difficulty}
+Since almost no coding is used to build the DRL, the difficulty actually lies in the optimization of hyperparameters used. Each training session takes atleast 8 hours, and results are not guaranteed each time hyperparameters are tuned. To counter this problem, some training are truncated once bad trends are shown. However, it is also good to note that for example in Figure \ref{fig:beta_valueLoss}, even though this set of parameters resulted in poor training for the first three million steps, in the last million steps it showed promising results and the loss starts to drop. Hence, initial trend may not necessarily tell the whole story, and prudent steps have to be taken to improve agent's performance. The amount of rewards also play a strong role in helping the agent to learn.
+
+\section{Future Works}
+In the future, the game can be extended into multi-agent mode where both enemies and turret are controlled by DRL algorithms. In fact, as an example, we could do an experiment where enemies adopt SAC algorithm and turret adopt PPO algorithm to evaluate which algorithm perform better with which kind of scenario. More interesting dynamics can be added in, such as power ups where if agent shoots a box, the agent would have unlimited attack range or super turning speed for a limited amount of time. Basically, relaxation of restrictions.  This could increase the level of difficulty for the agent.
+
+\section{Project Summary}
+In this report, we went through of the design of a unity-based DRL prototype game and the process of building the DRL agent as well as the analysis of its performance.
+
+

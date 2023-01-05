@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6030607762406661517
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6030607762406661519}
+  - component: {fileID: 6030607762406661552}
+  m_Layer: 0
+  m_Name: LevelManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6030607762406661519
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6030607762406661517}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -27, y: 1.2173446, z: 42.016617}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6030607762406661552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6030607762406661517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79b124c370a82f24a8f6335847123864, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyTank: {fileID: 7141976287764338769, guid: 83a5048a9185ad14b9995620fb9ffe6c, type: 3}
+  hydraTank: {fileID: 7854670193030336779, guid: 690731d2ef2f9a1438d3b4d4ab51ac71, type: 3}
+  bigBoss: {fileID: 7141976287764338769, guid: 808bba2a41dbeb44d8a01d2bcf5090ce, type: 3}
+  victoryPortal: {fileID: 0}
+  player: {fileID: 0}
+  SpawnContainer0: {fileID: 0}
+  SpawnContainer1: {fileID: 0}
+  SpawnContainer2: {fileID: 0}
+  bigBossSpawnContainer: {fileID: 0}
+  playerSpawnPoint: {fileID: 0}

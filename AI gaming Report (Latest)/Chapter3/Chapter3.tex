@@ -1,0 +1,148 @@
+
+\chapter{Reinforcement Learning}
+
+The details of the experiments and the performance metrics used are discussed in this chapter. The results and discussion are presented here.
+
+\section{Policy}
+
+Two state-of-art deep reinforcement learning algorithms are provided by unityML-Agent API, namely: proximal policy optimization (PPO) \cite{schulman2017proximal} and soft actor critic (SAC) \cite{haarnoja2018soft}. These algorithms utilises a neural network (NN) to approximate the optimal function that maps the agent's observations to the best strategy the agent could take given its current state. Although in complex situation SAC performs much better overall, we chose the PPO algorithm simply because the game environment is relatively simple (i.e. strategy space for agent is not very huge) and cheap to sample (i.e. not much computational resource required to run the game). PPO basically has the objective of optimizing the follow equation:
+
+\begin{equation}
+    \mathcal{L}^{clip}(\theta) = \hat{\mathbb{E}_t} \biggr[\min(r_t(\theta)\hat{A}_t, clip(r_t(\theta),1-\epsilon,1+\epsilon)\hat{A}_t)    \biggr],
+\end{equation}
+where $\theta$ represents the policy parameters, $\hat{A}_t$ denotes the advantage estimate at step $t$, $r_t(\theta) = \frac{\pi_\theta (a_t | s_t)}{ \pi_{\theta_{old}} (a_t | s_t) }$ is the probability ratio of new and old policy (i.e. action $a$ given state $s$ at time step $t$) and $\epsilon$ is a hyperparameter of small value. Clip is the short form for gradient clipping. $\hat{\mathbb{E}_t}[\cdot]$ represents the empirical average over the batches of sample data. Figure \ref{fig:PPO}, depicts the flow diagram for the PPO, actor-critic style algorithm DRL.
+
+\begin{figure}
+    \centering
+    \includegraphics[height=0.6\columnwidth]{Chapter3/PPO.pdf}\par
+    \caption{Actor Critic Style PPO}
+    \label{fig:PPO}
+\end{figure}
+
+\subsection{Observation Possibilities}
+
+The agent can observe the following parameters:
+\begin{enumerate}
+    \item Agent's current local rotation: A Quarternion
+    \item A time: For shooting cooldown
+    \item \textit{RaycastSensor} module to act as a laser pointer to sense the different tanks and its position.
+\end{enumerate}
+
+The agent has 2 continuous action space (turning clockwise and anticlockwise), and 2 discrete branches, each with 2 action size namely: \textbf{toFire} or \textbf{notFire} and \textbf{canShoot} or \textbf{cannotShoot}. \textbf{canShoot} to shoot means the cool down is over and agent can shoot whenever it requires. \textbf{toFire} is the very action of shooting a shell. This brings the space size for vector observations to 6.
+
+\subsection{Reward and Penalty Rules and corresponding value}
+The agent will obtain some positive rewards when:
+\begin{enumerate}
+    \item Agent destroys an Enemy, 0.5,
+    \item Agent allows a Friendly tank to enter shelter area, 0.08,
+    \item Agent successfully achieve the goal and end the episode, 1,
+\end{enumerate}
+The agent will receive some penalty (negative rewards) when:
+\begin{enumerate}
+    \item Agent allows enemies into the shelter area, -0.8f,
+    \item Agent shoots into friendlies, -0.3,
+    \item Agent shoots into random, empty area, -0.2,
+    \item Agent tries to shoot while reloading, -0.03,
+    \item Agent does nothing, -1 / \textit{MaxStep},
+\end{enumerate}
+
+It can be noted that the rewards for allowing a friendly tank into shelter area is exceptionally low, compared to other positive actions. This is such that it forces the tank to act and not simply remain nothing. As the tank could win through a loop hole where it simply allow all types of tank to enter the shelter area and win the game when number of friendlies is more than 10, especially when agent tank do not die. This also explains why the penalty for allowing enemy tank into shelter is 10 times that of reward for allowing friendly tank into shelter. Theoretically, a perfect agent can score a maximum of $11 = 0.5*20 + 1$, but this score is likely to be impossible as we have to factor in some enemies inevitably move into the shelter area, and lower rewards for allowing friendly to enter. A more conservative estimate could be that, we take an average for all the rewards, multiply by 20. That is for every enemy destroyed (step closer to winning condition), the agent tank will also take all other actions one time. This method gives us a value of 0.625. In other words, for a agent to work somewhat well, we should expect to see a cumulative reward of above $0.625$.
+
+The penalty for agent doing nothing is encourage the agent to finish the episode quickly, and scales inversely proportional to \textit{MaxStep}, the number of maximum steps the DRL can take. To force the agent to learn that every shot count, because of the cool down for shooting as well as limited turning speeds, a penalty is placed when agent shoots without aiming properly. The other rewards, are given accordingly when agent does something that is favourable to winning the game and given a penalty when it is unfavourable or adds no value to agent's intelligence in winning the game. The game ending is equivalent to ending of one DRL training episode, where the agent will replay the game and strive to do earn higher rewards.
+
+
+\section{Hyper Parameter tuning}
+There are a multitude of parameters that can be tuned to help the agent achieve a better policy in the below section, we will explain each of their significance and justify their values. Table. \ref{tab:sym1} is a summary of the final parameters used to achieve the best agent tank to the best of our ability. Before going into details of the parameter tuning, the metrics used to evaluate parameters will first be explained. The parameters are configured in a YAML \cite{ben2009yaml} file. 
+
+\subsection{Metrics}
+\label{Metrics}
+%TODO: change langugage
+
+We used Tensorboard to visualise the results of the agent's learning and the graph values have been smoothed out to aid in trend observations.
+\subsubsection{Cumulative reward}
+
+Cumulative reward represents the mean cumulative episode reward for all the agents (only one in our case). It should increase when training process is successful. The general trend should show it consistently increase over time. Under complex situations, rewards are not expected until millions of steps into the training process.
+
+\subsubsection{Entropy}
+Entropy is used to measure how random the decisions of the model is. It Should slowly decrease when training process is successful. If it decreases too fast, then beta, $\beta$ should be increased.  If it is not decreasing not at all, $\beta$ should be decreased.
+
+
+\subsubsection{Value loss}
+The value loss is the loss in the prediction of the value of each state. 
+A lower value loss indicates that the agent makes better predictions. This loss is expected to increase when agent is learning and decrease when the rewards stabilizes.
+
+\subsubsection{Policy loss}
+
+This along with value loss and entropy makes up for all the loss for PPO. It denotes the correlation of how much the policy is changing. The loss magnitude should decrease when a training session is successful.
+
+
+\subsection{Beta}
+
+The beta, $\beta \in [0.00001, 0.01]$ value denotes the strength of the entropy regularization. 
+The larger the value is the more random actions the agent would take, as greater $\beta$ value makes the policy more randomized. Ideally, the optimal $\beta$ value would allow the entropy to slowly decrease as rewards increases. When entropy drops too quickly, $\beta$ has to be increases. Likewise, if entropy decreases too slowly, $\beta$ should be lower. This value would be determined through trial and error as seen in Figure. \ref{fig:beta_entropy}, \ref{fig:beta_cumreward}, \ref{fig:beta_valueLoss}. In all these three metrics, the $\beta$ value of $0.001$ outperforms $\beta$ value of $0.01$. Additionally, we can observe that as cumulative rewards increases, value loss decreases.
+
+\input{Chapter3/beta/beta_fig}
+
+\subsection{Hidden Units and Layers}
+\input{Chapter3/HU/hu_fig}
+We could increase hidden units (HU) and layers to increase capacity of the NN and reduce possibility of under-fitting and over-fitting which result in better approximation. Number of HU ranges between $32$ and $512$ and number of layers ranges between $[1,3]$. The optimal values of these parameters will be approximated through trial and error experimenting. The cumulative rewards achieved by an agent with $256$ and $512$ HU can be observed from Figure. \ref{fig:hu_cumreward}. Both are able to achieve comparable results, yet from \ref{fig:hu_episode} we can observe that the model with $256$ HU is able to finish an episode of training faster than its counterpart. Which means, $256$ HU might be more suitable, especially when our tasks is not as complex.
+
+\input{Chapter3/HU/layers}
+The results for the different number of layers for the NN model in our agent is depicted in Figure \ref{fig:la_cumreward} and \ref{fig:la_loss}. It clearly shows that our model with just $2$ layers outperform all other choices. This could be because $3$ layers requires more data to train as it fails to generalise and over-fits. While the $1$ layer model is under-fitted as it does not have enough capacity to learn the tasks.
+
+\subsection{Batch and Buffer size}
+\input{Chapter3/Batch/batch_img}
+Batch size is the number of experiences used for one iteration of a gradient descent update. According to unity, if the agent has continuous action space batch size should be between $32$ and $512$. While if the agent has discrete action space, then the value to should be between $512$ and $5120$. The batch size is also limited by the machine's memory size. On the other hand, buffer size corresponds to how many experiences (agent observations, actions and rewards obtained) should be collected before any learning or updating of the model. 
+
+Since the agent tank can decide on the degree of angel to turn at any time, in this sense, the agent has a continuous action space. However, in deciding to shoot or not, the agent tank has a discrete action space, since its a Boolean logic. Hence, intuitively the buffer should be somewhere around $512$. Additionally, the number of possible agent experience should not be too large as the environment should be relatively simple as the agent is not moving. This is evident from the results depicted in Figure. \ref{fig:batch_cumreward}, \ref{fig:batch_policy}, \ref{fig:batch_value}. Batch size cannot be small, otherwise results will be very bad. On the other hand, buffer size cannot be too large. Although, in short run, models trained with buffer size of $4096$ and $2048$ achieves similar results and trends in the same direction. As agents learns more, models with the smaller buffer size performs better and achieves better results faster. As observed from the pink and grey graph in Figure. \ref{fig:batch_cumreward}, \ref{fig:batch_policy}, \ref{fig:batch_value}.
+
+
+\subsection{Exploit or Explore}
+Most reinforcement learning algorithms from a classic dilemma, to exploit or to explore. Exploring means that the agent will act as randomly as possible in an attempt to find more ways that could earn higher expected rewards. In Unity, under the 'reward signal', there is a extrinsic module as well as a curiosity module which enables us to configure parameters to instruct when the agent should explore when extrinsic rewards are sparse. Where extrinsic rewards refers to rewards gained from the environment. Exploitation is a scenario where the agent would maximise its expected rewards based on its current understanding of the environment. Both of which should be carefully balanced, such that the rewards agent gets from the environment (i.e. killing an enemy tank or sheltering a friendly tank) do not overwhelm the curiosity reward (i.e. how surprised the agent is). For example, if the agent is not curious and have realised that it could gain rewards by killing tank. If curiosity is not strong enough, it may not realise that it will gain rewards if the agent shelters a friendly, and may instead follow its current knowledge of simply killing all tanks.
+
+Both of these signals have the parameters strength $\mathbb{S}$ and gamma $\gamma$. Strength represents the constant factor which is used as a multiplier to the raw reward. The $\mathbb{S}_{extrinsic} \in \mathbb{R}^+$ and $\mathbb{S}_{curiosity} \in [0.001, 0.1]$ is set at recommended values of $1.0$ and $0.1$ respectively. $\gamma$ represents the discount factor which put more weights to the recent rewards. This helps the agent to think how far into the future it should care with respect to the expected rewards. Similarly, both $\gamma_{extrinsic} \in [0.8 , 0.995]$ and $\gamma_{curiosity} \in [0.8, 0.995]$ is set to recommended value of $0.99$. 
+
+\subsection{Time Horizon, learning rate, epsilon}
+\input{Chapter3/Epsilon/epsilon_img}
+The learning rate, $\eta$ affects the speed of the training process. Lower learning rate corresponds to smaller update step for each gradient descent. In other words, $\eta$ will affect how much the policy changes. Although this results in slower convergence rate but it allows the agent to converge more in a more stable fashion. Intuitively, a lower learning rate should reflect longer time horizon to allow the agent to have more time and episodes to learn. However, to experiment more efficiently, training time horizon has been truncated and the initial results and trends will be compared first (as seen from the result figures). Finally, the most promising parameters will be used for a full run to evaluate for final model. 
+
+$\epsilon \in [0.1, 0.3]$ represents the tolerable threshold of divergence between the old and new policies when performing gradient descent updates. Simply put, $\epsilon$ limits to the amount of policy change. Smaller $\epsilon$ will result in more stable updates, however, it will slow down the training process too.  From Figure. \ref{fig:eps_entropy},
+the orange graph representing $\epsilon=0.3$ achieves lower entropy than the blue graph representing $\epsilon=0.1$. This shows that higher $\epsilon$ is able to help the model make less random decision. However, both trends similar in terms of the reward they are able to achieve. This is depicted in Figure \ref{fig:eps_cumrewards}. In definite terms, the orange graph performs slightly better compared to the blue one. It is also noted that $\epsilon$ decreases over time and larger $\epsilon$ results in less steeper decline (both linearly)in $\eta$ as seen in Figures. \ref{fig:eps} and \ref{fig:learning_rate} respectively.
+
+
+\subsection{Final Model}
+
+\input{Chapter3/Final/Final_img}
+
+The final variables used are summarized in Table \ref{tab:sym1}. The model is able to achieve excellent result as depicted in Figures. \ref{fig:final_cumreward}, \ref{fig:final_entropy}, \ref{fig:final_valueLoss}. This agent was able to hit above cumulative reward score of 3, way above the 0.625 mark that we loosely estimated. As expected, the agent did perform well as it will be shown in the video. 
+
+\begin{table}[ht]
+%\renewcommand{\arraystretch}{1.3}
+\caption{Symbols}
+\centering
+\resizebox{1\linewidth}{!}{
+\begin{tabularx}{1\linewidth} { X X }
+\toprule
+\textbf{Parameter} & \textbf{Values}  \\
+\midrule
+batch size & 512 \\
+buffer size & 2048 \\
+learning rate, $\eta$ & 0.0003 \\
+beta, $\beta$ & 0.001 \\
+epsilon, $\epsilon$ &  0.2 \\
+lambda, $\lambda$ & 0.95 \\
+epoch & 50 \\
+learning rate schedule & linear \\
+hidden units, HU & 256 \\
+number of layers & 2 \\
+$\mathbb{S}_{extrinsic}$ & 1.0\\ 
+$\mathbb{S}_{curiosity}$ & 0.1  \\
+$\gamma_{extrinsic}$ / $\gamma_{curiosity}$  & 0.99 \\
+max steps & 5000000 \\
+\bottomrule
+\end{tabularx}
+}
+\label{tab:sym1}
+\end{table}
+
+
