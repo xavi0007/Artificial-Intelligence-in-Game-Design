@@ -1,4 +1,4 @@
-##A turret defence game made using unity
+## A turret defence game made using unity
 
 Train a AI controlled tank to defend an area using deep reinforcement 
 learning
